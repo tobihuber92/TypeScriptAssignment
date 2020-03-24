@@ -1,8 +1,15 @@
 (function () {
-	'use strict';
+    'use strict';
 
-	const helloWorld = "Hello world";
+    const helloWorld = "Hello world";
+    class Beispiel extends HTMLElement {
+        constructor() {
+            super();
+            this.innerHTML = "<h1>Hello World</h1>";
+        }
+    }
 
-	console.log(helloWorld);
+    console.log(helloWorld);
+    customElements.define('my-beispiel', Beispiel);
 
 }());
