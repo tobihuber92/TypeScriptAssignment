@@ -9,7 +9,12 @@
         }
     }
 
+    function alertMe() {
+        alert("ATTENTION PLEASE");
+    }
+
     console.log(helloWorld);
     customElements.define('my-beispiel', Beispiel);
+    alertMe();
 
 }());
