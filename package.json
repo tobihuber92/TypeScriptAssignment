@@ -1,0 +1,12 @@
+{
+  "name": "typescript-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^3.8.3"
+  }
+}
