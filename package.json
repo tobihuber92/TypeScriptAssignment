@@ -12,6 +12,7 @@
     "dependencies": {
         "rollup": "^2.41.0",
         "rollup-plugin-typescript2": "^0.26.0",
+        "tslib": "^2.1.0",
         "typescript": "^3.9.9"
     }
 }
