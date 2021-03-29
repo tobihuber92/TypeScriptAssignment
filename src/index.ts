@@ -1,12 +1,15 @@
 import { addBtn, addCloseButtons, list, myTodoInput } from "./dom-utils";
+import { addLocalStorageOption, loadTodos } from "./localstorage";
 import { validateButton, validateInput } from "./validators";
 
 function init() {
+  loadTodos();
   addBtn.disabled = true;
   addCloseButtons();
   addCheckedListener();
   addBtn.addEventListener("click", newTodoElement);
   myTodoInput.addEventListener("input", validateButton);
+  addLocalStorageOption();
 }
 
 function addCheckedListener() {
