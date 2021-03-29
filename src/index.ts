@@ -1,4 +1,10 @@
-import { addBtn, addCloseButtons, list, myTodoInput } from "./dom-utils";
+import {
+  addBtn,
+  addCloseButton,
+  addCloseButtons,
+  list,
+  myTodoInput,
+} from "./dom-utils";
 import { addLocalStorageOption, loadTodos } from "./localstorage";
 import { validateButton, validateInput } from "./validators";
 
@@ -38,7 +44,7 @@ function newTodoElement() {
       listElement.appendChild(inputTextContent);
       resetInput();
       document.getElementById("myUL")?.appendChild(listElement);
-      addCloseButtons();
+      addCloseButton(listElement);
     } else {
       alert(validation.message);
     }

@@ -25,3 +25,19 @@ export function addCloseButtons() {
     };
   }
 }
+
+export function addCloseButton(todoListElement: HTMLLIElement) {
+  const closeButtonWrapper = document.createElement("SPAN");
+  const closeButtonCharacter = document.createTextNode("\u00D7");
+  closeButtonWrapper.className = "close";
+  closeButtonWrapper.appendChild(closeButtonCharacter);
+  todoListElement.appendChild(closeButtonWrapper);
+  const closeButton = todoListElement.querySelector(
+    ".close"
+  ) as HTMLSpanElement;
+  // Click on a close button to hide the current list item
+  closeButton.onclick = function (e: UIEvent) {
+    const listElement = e.target as HTMLElement;
+    listElement.closest("li")?.remove();
+  };
+}
