@@ -1,6 +1,11 @@
 body{
     background-color: rgb(49, 53, 52);
+    font-family:'Courier New', Courier, monospace;
     text-align: center;
+}
+.header{
+    color: white;
+    font-size: 80px;
 }
 
 .simon{
@@ -45,13 +50,14 @@ body{
     transform: translate(-50%, -50%);
     width: 150px;
     height: 150px;
-    line-height: 95px;
+    line-height: 160px;
     text-align: center;
     color: #36383f;
     font-size: 50px;
-    border: 18px solid rgb(49, 53, 52);
+    border: 30px solid rgb(49, 53, 52);
 	background-color: #b9b9b9;
     border-radius: 50%;
     margin-left: 50%;
-    margin-top: -230px;
+    margin-top: -225px;
+    font-weight: bold;
 }
