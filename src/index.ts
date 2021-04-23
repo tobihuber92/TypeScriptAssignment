@@ -6,7 +6,7 @@ import { alertMe } from "./myOtherModule";
 console.log(helloWorld);
 customElements.define("my-beispiel", Beispiel);
 
-alertMe();
+//alertMe();
 
 const myInputValue = document.querySelector<HTMLInputElement>("#myInput");
 
