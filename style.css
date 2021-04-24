@@ -1,42 +1,68 @@
-body{
-    background-color: rgb(49, 53, 52);
-    font-family:'Courier New', Courier, monospace;
+body {
+    background-color: rgb(58, 58, 58);
+    font-family: 'Courier New', Courier, monospace;
     text-align: center;
 }
-.header{
+
+.headline {
     color: white;
     font-size: 80px;
+    text-shadow: 0 0 10px #979caf;
 }
 
-.simon{
+.scoreBar {
+    margin-top: 50px;
+    margin-left: 28.5%;
+    font-size: 25px;
+    display: grid;
+    grid-template-columns: 20% 20% 20%;
+}
+
+.score {
+    margin: 5px;
+    background-color: #bbbbbb;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #979caf;
+}
+
+.simon {
     margin-top: 50px;
 }
-.quarterCircle{
+
+.quarterCircle {
     width: 200px;
     height: 200px;
     display: inline-block;
     position: relative;
+    cursor: pointer;
 }
-.quarterCircle1{
+
+.quarterCircle1 {
     border-top-left-radius: 100%;
     background-color: rgb(7, 160, 40);
     margin: 10px;
 }
-.quarterCircle2{
+
+.quarterCircle2 {
     border-top-right-radius: 100%;
     background-color: rgb(196, 22, 22);
     margin: 10px;
 }
-.quarterCircle3{
+
+.quarterCircle3 {
     border-bottom-left-radius: 100%;
     background-color: rgb(221, 207, 11);
     margin: 10px;
 }
-.quarterCircle4{
+
+.quarterCircle4 {
     border-bottom-right-radius: 100%;
-    background-color: rgb(15, 28, 199);
+    background-color: rgb(76, 87, 233);
     margin: 10px;
 }
+
 .quarterCircle1:hover,
 .quarterCircle2:hover,
 .quarterCircle3:hover,
@@ -46,18 +72,41 @@ body{
     border: 1px solid #979caf;
     box-sizing: border-box;
 }
-.innerCircle{
+
+.innerCircle {
     transform: translate(-50%, -50%);
     width: 150px;
     height: 150px;
     line-height: 160px;
-    text-align: center;
     color: #36383f;
     font-size: 50px;
-    border: 30px solid rgb(49, 53, 52);
-	background-color: #b9b9b9;
+    border: 30px solid rgb(58, 58, 58);
+    background-color: #bbbbbb;
     border-radius: 50%;
     margin-left: 50%;
     margin-top: -225px;
     font-weight: bold;
+}
+
+.startSimon {
+    margin-top: 50px;
+}
+
+.startSimon button {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    border: 0;
+    background-color: #bbbbbb;
+    padding: 15px 15px;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    box-shadow: 0 0 1px black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.startSimon button:hover {
+    box-shadow: 0 0 20px #979caf;
+    border: 1px solid #979caf;
+    box-sizing: border-box;
 }
