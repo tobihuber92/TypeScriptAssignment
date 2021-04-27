@@ -31,7 +31,8 @@ body {
     margin-top: 50px;
 }
 
-.quarterCircle {
+.btn{
+    margin: 10px;
     width: 200px;
     height: 200px;
     display: inline-block;
@@ -39,39 +40,35 @@ body {
     cursor: pointer;
 }
 
-.quarterCircle1 {
+.quarterCircleGreen {
     border-top-left-radius: 100%;
     background-color: rgb(7, 160, 40);
-    margin: 10px;
 }
 
-.quarterCircle2 {
+.quarterCircleRed {
     border-top-right-radius: 100%;
     background-color: rgb(196, 22, 22);
-    margin: 10px;
 }
 
-.quarterCircle3 {
+.quarterCircleYellow {
     border-bottom-left-radius: 100%;
     background-color: rgb(221, 207, 11);
-    margin: 10px;
 }
 
-.quarterCircle4 {
+.quarterCircleBlue {
     border-bottom-right-radius: 100%;
     background-color: rgb(76, 87, 233);
-    margin: 10px;
 }
 
-.quarterCircle1:hover,
-.quarterCircle2:hover,
-.quarterCircle3:hover,
-.quarterCircle4:hover,
+/* .quarterCircleGreen:hover,
+.quarterCircleRed:hover,
+.quarterCircleYellow:hover,
+.quarterCircleBlue:hover,
 .hover {
     box-shadow: 0 0 30px #979caf;
     border: 1px solid #979caf;
     box-sizing: border-box;
-}
+} */
 
 .innerCircle {
     transform: translate(-50%, -50%);
@@ -107,6 +104,12 @@ body {
 
 .startSimon button:hover {
     box-shadow: 0 0 20px #979caf;
+    border: 1px solid #979caf;
+    box-sizing: border-box;
+}
+
+.active{
+    box-shadow: 0 0 20px #db02d0;
     border: 1px solid #979caf;
     box-sizing: border-box;
 }
