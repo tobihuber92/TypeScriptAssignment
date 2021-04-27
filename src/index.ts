@@ -6,37 +6,46 @@ let btnGreen = document.querySelector('.quarterCircleGreen');
 let btnRed = document.querySelector('.quarterCircleRed');
 let btnYellow = document.querySelector('.quarterCircleYellow');
 let btnBlue = document.querySelector('.quarterCircleBlue');
+let btnStart = document.querySelector('.startSimon');
+
+let allButtons = [btnGreen, btnRed, btnYellow, btnBlue]
+let sequence: any[] =[];
+var userClickedPattern: string[] =[];
+var start = false; 
 
 btnGreen?.addEventListener("click", function(){irgendwas("green")})
 btnRed?.addEventListener("click", function(){irgendwas("red")})
 btnYellow?.addEventListener("click", function(){irgendwas("yellow")})
 btnBlue?.addEventListener("click", function(){irgendwas("blue")})
+btnStart?.addEventListener("click", function(){startSimon()})
 
+
+// Funktion damit ich die Farben mehrmals aufrufen kann
 function irgendwas(farbe:string){
-    nextSequence();
     callButton(farbe);
     playAudio(farbe);
     activateButton(farbe);
 }
 
-
-let allButtons = [btnGreen, btnRed, btnYellow, btnBlue]
-let sequence: any[] =[];
-var userClickedPattern: string[] =[];
-
-
+// Funktion die eine zufällige Farbe ermittelt
 function nextSequence():void {
     var randomNumber = Math.floor(Math.random() * 4);
     var randomButton = allButtons[randomNumber];
     sequence.push(randomButton);
 } 
 
+function startSimon(){
+    if (start===false){
+        start = true;
+        nextSequence();
+        console.log(sequence);
+    }
+}
+
 function callButton(farbe:string):void{
     var userClickedButtonColor = farbe
     userClickedPattern.push(userClickedButtonColor)
-    console.log(userClickedPattern);
-    nextSequence();
-    //console.log(sequence);
+    //console.log(userClickedPattern);
 }
 
 function playAudio(farbe:string){
@@ -68,5 +77,4 @@ function deactivateButton(){
     btnRed?.classList.remove("active");
     btnYellow?.classList.remove("active");
     btnBlue?.classList.remove("active");
-
 }
