@@ -1,19 +1,21 @@
 //THIS IS THE ENTRY FILE - WRITE YOUR MAIN LOGIC HERE!
 import { ModuleKind } from "../node_modules/typescript/lib/typescript";
 
-
+// Klassen zuweisen 
 let btnGreen = document.querySelector('.quarterCircleGreen');
 let btnRed = document.querySelector('.quarterCircleRed');
 let btnYellow = document.querySelector('.quarterCircleYellow');
 let btnBlue = document.querySelector('.quarterCircleBlue');
 let btnStart = document.querySelector('.startSimon');
 
+// Arrays & Variablen
 let allButtons = [("green"), ("red"), ("yellow"), ("blue")]
 let sequence: any[] =[];
 var userClickedPattern: string[] =[];
 var start = false; 
 var score =0;
 
+// Click-Funktion
 btnGreen?.addEventListener("click", function()
 {
     irgendwas("green");
@@ -60,25 +62,27 @@ function startSimon(){
     }
 }
 
+// Fügt die Farben in ein Array ein
 function callButton(farbe:string):void{
     var userClickedButtonColor = farbe
     userClickedPattern.push(userClickedButtonColor)
     //console.log(userClickedPattern);
 }
 
+// Funktion um die Sounds abzuspielen
 function playAudio(farbe:string){
     const audio = new Audio("../src/sounds/" + farbe + ".mp3")
     audio.play()
 } 
 
+//Fügt CSS Klasse "active" hinzu 
+//--> wenn ein Button aktiviert wird, wird er hervorgehoben
 function activateButton(farbe:string){
     if(farbe==="green"){
         btnGreen?.classList.add("active");
-        console.log("testgrün");
     }
     else if(farbe==="red"){
         btnRed?.classList.add("active");
-        console.log("testrot");
     }
     else if(farbe==="yellow"){
         btnYellow?.classList.add("active");
@@ -90,6 +94,7 @@ function activateButton(farbe:string){
 setTimeout(deactivateButton, 300)
 }
 
+// Die Hervorhebung wird deaktiviert
 function deactivateButton(){
     btnGreen?.classList.remove("active");
     btnRed?.classList.remove("active");
@@ -97,6 +102,7 @@ function deactivateButton(){
     btnBlue?.classList.remove("active");
 }
 
+// Wenn man Start drückt kommt ein zufälliger Sound und ein Button wird auf active gesetzt
 function showColorEffect(){
 
     let start = 0; 
@@ -114,3 +120,4 @@ function showColorEffect(){
         }
     }
 }
+
