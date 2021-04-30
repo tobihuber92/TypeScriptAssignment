@@ -8,16 +8,32 @@ let btnYellow = document.querySelector('.quarterCircleYellow');
 let btnBlue = document.querySelector('.quarterCircleBlue');
 let btnStart = document.querySelector('.startSimon');
 
-let allButtons = [btnGreen, btnRed, btnYellow, btnBlue]
+let allButtons = [("green"), ("red"), ("yellow"), ("blue")]
 let sequence: any[] =[];
 var userClickedPattern: string[] =[];
 var start = false; 
+var score =0;
 
-btnGreen?.addEventListener("click", function(){irgendwas("green")})
-btnRed?.addEventListener("click", function(){irgendwas("red")})
-btnYellow?.addEventListener("click", function(){irgendwas("yellow")})
-btnBlue?.addEventListener("click", function(){irgendwas("blue")})
-btnStart?.addEventListener("click", function(){startSimon()})
+btnGreen?.addEventListener("click", function()
+{
+    irgendwas("green");
+});
+btnRed?.addEventListener("click", function()
+{
+    irgendwas("red");
+})
+btnYellow?.addEventListener("click", function()
+{
+    irgendwas("yellow");
+})
+btnBlue?.addEventListener("click", function()
+{
+    irgendwas("blue");
+})
+btnStart?.addEventListener("click", function()
+{
+    startSimon();
+})
 
 
 // Funktion damit ich die Farben mehrmals aufrufen kann
@@ -34,11 +50,13 @@ function nextSequence():void {
     sequence.push(randomButton);
 } 
 
+// Startet die Anwendung
 function startSimon(){
     if (start===false){
         start = true;
         nextSequence();
-        console.log(sequence);
+        showColorEffect();
+        //console.log(sequence);
     }
 }
 
@@ -51,7 +69,7 @@ function callButton(farbe:string):void{
 function playAudio(farbe:string){
     const audio = new Audio("../src/sounds/" + farbe + ".mp3")
     audio.play()
-}
+} 
 
 function activateButton(farbe:string){
     if(farbe==="green"){
@@ -77,4 +95,22 @@ function deactivateButton(){
     btnRed?.classList.remove("active");
     btnYellow?.classList.remove("active");
     btnBlue?.classList.remove("active");
+}
+
+function showColorEffect(){
+
+    let start = 0; 
+    let effect = setInterval(innerFunction, 500); 
+
+    function innerFunction(){
+        if(start < sequence.length){
+            var currentColour = sequence[start]
+            activateButton(currentColour);
+            playAudio(currentColour); 
+            start++;
+        }
+        else{
+            clearInterval(effect)
+        }
+    }
 }
