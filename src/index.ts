@@ -7,6 +7,8 @@ let btnRed = document.querySelector('.quarterCircleRed');
 let btnYellow = document.querySelector('.quarterCircleYellow');
 let btnBlue = document.querySelector('.quarterCircleBlue');
 let btnStart = document.querySelector('.startSimon');
+let scoreSign:any = document.querySelector(".currentScore");
+var score = 0
 
 
 // Arrays & Variablen
@@ -119,6 +121,7 @@ function check() {
 
   // To reset the game when its game over
 function gameOver() {
+    score = 0
     userClickedPattern = []
     sequence = []
     start = false
@@ -149,11 +152,12 @@ function callButton(farbe:string):void{
 
         if(check() && userClickedPattern.length === sequence.length){
 
+            score++;
             userClickedPattern=[]
             nextSequence();
             showColorEffect();
+            scoreSign.innerHTML=("Dein Score:" + score);
         }
-
         else if(!check()){
         gameOver();        }
 }}
