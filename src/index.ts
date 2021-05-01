@@ -7,30 +7,31 @@ let btnRed = document.querySelector('.quarterCircleRed');
 let btnYellow = document.querySelector('.quarterCircleYellow');
 let btnBlue = document.querySelector('.quarterCircleBlue');
 let btnStart = document.querySelector('.startSimon');
+var level = 0
+
 
 // Arrays & Variablen
 let allButtons = [("green"), ("red"), ("yellow"), ("blue")]
 let sequence: any[] =[];
 var userClickedPattern: string[] =[];
 var start = false; 
-var score =0;
 
 // Click-Funktion
 btnGreen?.addEventListener("click", function()
 {
-    irgendwas("green");
+    clickedColors("green");
 });
 btnRed?.addEventListener("click", function()
 {
-    irgendwas("red");
+    clickedColors("red");
 })
 btnYellow?.addEventListener("click", function()
 {
-    irgendwas("yellow");
+    clickedColors("yellow");
 })
 btnBlue?.addEventListener("click", function()
 {
-    irgendwas("blue");
+    clickedColors("blue");
 })
 btnStart?.addEventListener("click", function()
 {
@@ -39,10 +40,10 @@ btnStart?.addEventListener("click", function()
 
 
 // Funktion damit ich die Farben mehrmals aufrufen kann
-function irgendwas(farbe:string){
+function clickedColors(farbe:string){
     callButton(farbe);
-    playAudio(farbe);
-    activateButton(farbe);
+    //playAudio(farbe);
+    //ctivateButton(farbe);
 }
 
 // Funktion die eine zufällige Farbe ermittelt
@@ -50,29 +51,8 @@ function nextSequence():void {
     var randomNumber = Math.floor(Math.random() * 4);
     var randomButton = allButtons[randomNumber];
     sequence.push(randomButton);
-} 
+    console.log(sequence)
 
-// Startet die Anwendung
-function startSimon(){
-    if (start===false){
-        start = true;
-        nextSequence();
-        showColorEffect();
-        //console.log(sequence);
-    }
-}
-
-// Fügt die Farben in ein Array ein
-function callButton(farbe:string):void{
-    var userClickedButtonColor = farbe
-    userClickedPattern.push(userClickedButtonColor)
-    //console.log(userClickedPattern);
-}
-
-// Funktion um die Sounds abzuspielen
-function playAudio(farbe:string){
-    const audio = new Audio("../src/sounds/" + farbe + ".mp3")
-    audio.play()
 } 
 
 //Fügt CSS Klasse "active" hinzu 
@@ -102,11 +82,18 @@ function deactivateButton(){
     btnBlue?.classList.remove("active");
 }
 
+ // Funktion um die Sounds abzuspielen
+function playAudio(farbe:string){
+    const audio = new Audio("../src/sounds/" + farbe + ".mp3")
+    audio.play()
+    console.log("clicked")
+} 
+/*
 // Wenn man Start drückt kommt ein zufälliger Sound und ein Button wird auf active gesetzt
 function showColorEffect(){
 
     let start = 0; 
-    let effect = setInterval(innerFunction, 500); 
+    let effect = setInterval(innerFunction, 1000); 
 
     function innerFunction(){
         if(start < sequence.length){
@@ -119,5 +106,55 @@ function showColorEffect(){
             clearInterval(effect)
         }
     }
+} */
+
+
+// To check if userClickedPattern contains inside gamePattern
+function check() {
+    for (var i = 0; i < userClickedPattern.length; i++) {
+      if (userClickedPattern[i] != sequence[i]) return false
+    }
+  
+    return true
+  }
+
+  // To reset the game when its game over
+function gameOver() {
+    level = 0
+    userClickedPattern = []
+    sequence = []
+    start = false
+  
+   console.log("loser")
+  }
+
+// Startet die Anwendung
+function startSimon(){
+    if (start===false){
+        start = true;
+        nextSequence();
+        //showColorEffect();
+    }
 }
+
+// Fügt die Farben in ein Array ein
+function callButton(farbe:string):void{
+
+     if(start){
+        var userClickedButtonColor = farbe
+
+        //showColorEffect()
+        playAudio(userClickedButtonColor)
+        userClickedPattern.push(userClickedButtonColor)
+
+        if(check() && userClickedPattern.length === sequence.length){
+
+            userClickedPattern=[]
+            nextSequence();
+            //showColorEffect();
+        }
+
+        else if(!check()){
+        gameOver();        }
+}}
 
