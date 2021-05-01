@@ -7,7 +7,6 @@ let btnRed = document.querySelector('.quarterCircleRed');
 let btnYellow = document.querySelector('.quarterCircleYellow');
 let btnBlue = document.querySelector('.quarterCircleBlue');
 let btnStart = document.querySelector('.startSimon');
-var level = 0
 
 
 // Arrays & Variablen
@@ -19,19 +18,19 @@ var start = false;
 // Click-Funktion
 btnGreen?.addEventListener("click", function()
 {
-    clickedColors("green");
+    callButton("green");
 });
 btnRed?.addEventListener("click", function()
 {
-    clickedColors("red");
+    callButton("red");
 })
 btnYellow?.addEventListener("click", function()
 {
-    clickedColors("yellow");
+    callButton("yellow");
 })
 btnBlue?.addEventListener("click", function()
 {
-    clickedColors("blue");
+    callButton("blue");
 })
 btnStart?.addEventListener("click", function()
 {
@@ -39,12 +38,12 @@ btnStart?.addEventListener("click", function()
 })
 
 
-// Funktion damit ich die Farben mehrmals aufrufen kann
+/* // Funktion damit ich die Farben mehrmals aufrufen kann
 function clickedColors(farbe:string){
     callButton(farbe);
     //playAudio(farbe);
-    //ctivateButton(farbe);
-}
+    //activateButton(farbe);
+} */
 
 // Funktion die eine zufällige Farbe ermittelt
 function nextSequence():void {
@@ -88,7 +87,7 @@ function playAudio(farbe:string){
     audio.play()
     console.log("clicked")
 } 
-/*
+
 // Wenn man Start drückt kommt ein zufälliger Sound und ein Button wird auf active gesetzt
 function showColorEffect(){
 
@@ -106,7 +105,7 @@ function showColorEffect(){
             clearInterval(effect)
         }
     }
-} */
+} 
 
 
 // To check if userClickedPattern contains inside gamePattern
@@ -120,10 +119,11 @@ function check() {
 
   // To reset the game when its game over
 function gameOver() {
-    level = 0
     userClickedPattern = []
     sequence = []
     start = false
+    alert("GAME OVER")
+
   
    console.log("loser")
   }
@@ -133,7 +133,7 @@ function startSimon(){
     if (start===false){
         start = true;
         nextSequence();
-        //showColorEffect();
+        showColorEffect();
     }
 }
 
@@ -143,7 +143,7 @@ function callButton(farbe:string):void{
      if(start){
         var userClickedButtonColor = farbe
 
-        //showColorEffect()
+        activateButton(userClickedButtonColor)
         playAudio(userClickedButtonColor)
         userClickedPattern.push(userClickedButtonColor)
 
@@ -151,7 +151,7 @@ function callButton(farbe:string):void{
 
             userClickedPattern=[]
             nextSequence();
-            //showColorEffect();
+            showColorEffect();
         }
 
         else if(!check()){
