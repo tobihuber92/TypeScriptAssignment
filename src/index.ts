@@ -8,6 +8,7 @@ let btnYellow = document.querySelector('.quarterCircleYellow');
 let btnBlue = document.querySelector('.quarterCircleBlue');
 let btnStart = document.querySelector('.startSimon');
 let scoreSign:any = document.querySelector(".currentScore");
+let gameOverSign:any = document.querySelector(".gameOver")
 var score = 0
 
 
@@ -121,12 +122,15 @@ function check() {
 
   // To reset the game when its game over
 function gameOver() {
+    const audio = new Audio("../src/sounds/gameOver.mp3")
+    audio.play()
+
+    gameOverSign.innerHTML=("GAME OVER");
+    //alert("GAME OVER")
     score = 0
     userClickedPattern = []
     sequence = []
     start = false
-    alert("GAME OVER")
-
   
    console.log("loser")
   }
@@ -137,6 +141,7 @@ function startSimon(){
         start = true;
         nextSequence();
         showColorEffect();
+        gameOverSign.innerHTML=("");
     }
 }
 
