@@ -1,40 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-<body>
-    <div class="headline">
-        TOBI SAYS: PLAY MY GAME!
-    </div>
+  <body>
+    <div class="headline">TOBI SAYS: PLAY MY GAME!</div>
     <div class="scoreBar">
-        <div class="score currentScore" id="currentScore">Dein Score: </div>
-        <div class="gameOver"></div>
-        <div class="score bestScore">Bester Score: 0</div>
+      <div class="score currentScore" id="currentScore">Dein Score:</div>
+      <div class="gameOver">Have fun!</div>
+      <div class="score bestScore">Bester Score:</div>
     </div>
     <div class="simon">
-        <div>
-            <div class="btn quarterCircleGreen"></div>
-            <div class="btn quarterCircleRed"></div>
-        </div>
+      <div>
+        <div class="btn quarterCircleGreen"></div>
+        <div class="btn quarterCircleRed"></div>
+      </div>
 
-        <div>
-            <div class="btn quarterCircleYellow"></div>
-            <div class="btn quarterCircleBlue"></div>
-        </div>
+      <div>
+        <div class="btn quarterCircleYellow"></div>
+        <div class="btn quarterCircleBlue"></div>
+      </div>
 
-        <div class="innerCircle"></div>
+      <div class="innerCircle"></div>
     </div>
     <div class="startSimon">
-        <button id="start">Start game!</button>
+      <button id="start">Start game!</button>
     </div>
 
     <script defer src="./build/bundle.js"></script>
-</body>
-
+  </body>
 </html>

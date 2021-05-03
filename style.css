@@ -1,63 +1,63 @@
 body {
-    background-color: rgb(58, 58, 58);
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
+  background-color: rgb(58, 58, 58);
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
 }
 
 .headline {
-    color: white;
-    font-size: 80px;
-    text-shadow: 0 0 10px #979caf;
+  color: white;
+  font-size: 80px;
+  text-shadow: 0 0 10px #979caf;
 }
 
 .scoreBar {
-    margin-top: 50px;
-    margin-left: 28.5%;
-    font-size: 25px;
-    display: grid;
-    grid-template-columns: 20% 20% 20%;
+  margin-top: 50px;
+  margin-left: 28.5%;
+  font-size: 25px;
+  display: grid;
+  grid-template-columns: 20% 20% 20%;
 }
 
 .score {
-    margin: 5px;
-    background-color: #bbbbbb;
-    color: rgb(0, 0, 0);
-    font-weight: 700;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #979caf;
+  margin: 5px;
+  background-color: #bbbbbb;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #979caf;
 }
 
 .simon {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
-.btn{
-    margin: 10px;
-    width: 200px;
-    height: 200px;
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
+.btn {
+  margin: 10px;
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
 }
 
 .quarterCircleGreen {
-    border-top-left-radius: 100%;
-    background-color: rgb(7, 160, 40);
+  border-top-left-radius: 100%;
+  background-color: rgb(7, 160, 40);
 }
 
 .quarterCircleRed {
-    border-top-right-radius: 100%;
-    background-color: rgb(196, 22, 22);
+  border-top-right-radius: 100%;
+  background-color: rgb(196, 22, 22);
 }
 
 .quarterCircleYellow {
-    border-bottom-left-radius: 100%;
-    background-color: rgb(221, 207, 11);
+  border-bottom-left-radius: 100%;
+  background-color: rgb(221, 207, 11);
 }
 
 .quarterCircleBlue {
-    border-bottom-right-radius: 100%;
-    background-color: rgb(76, 87, 233);
+  border-bottom-right-radius: 100%;
+  background-color: rgb(76, 87, 233);
 }
 
 /* .quarterCircleGreen:hover,
@@ -71,63 +71,63 @@ body {
 } */
 
 .innerCircle {
-    transform: translate(-50%, -50%);
-    width: 150px;
-    height: 150px;
-    line-height: 160px;
-    color: #36383f;
-    font-size: 50px;
-    border: 30px solid rgb(58, 58, 58);
-    background-color: #bbbbbb;
-    border-radius: 50%;
-    margin-left: 50%;
-    margin-top: -225px;
-    font-weight: bold;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  line-height: 160px;
+  color: #36383f;
+  font-size: 50px;
+  border: 30px solid rgb(58, 58, 58);
+  background-color: #bbbbbb;
+  border-radius: 50%;
+  margin-left: 50%;
+  margin-top: -225px;
+  font-weight: bold;
 }
 
 .startSimon {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 .startSimon button {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 20px;
-    border: 0;
-    background-color: #bbbbbb;
-    padding: 15px 15px;
-    color: rgb(0, 0, 0);
-    font-weight: 700;
-    box-shadow: 0 0 1px black;
-    border-radius: 5px;
-    cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  border: 0;
+  background-color: #bbbbbb;
+  padding: 15px 15px;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  box-shadow: 0 0 1px black;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .startSimon button:hover {
-    box-shadow: 0 0 20px #979caf;
-    border: 1px solid #979caf;
-    box-sizing: border-box;
+  box-shadow: 0 0 20px #979caf;
+  border: 1px solid #979caf;
+  box-sizing: border-box;
 }
 
-.active{
-    box-shadow: 0 0 20px #db02d0;
-    border: 1px solid #979caf;
-    box-sizing: border-box;
+.active {
+  box-shadow: 0 0 20px #db02d0;
+  border: 1px solid #979caf;
+  box-sizing: border-box;
 }
 
-.gameOver{
-    margin: 5px;
-    background-color: #bbbbbb;
-    color: rgb(0, 0, 0);
-    font-weight: 700;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #979caf;
+.gameOver {
+  margin: 5px;
+  background-color: #bbbbbb;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #979caf;
 }
 
-.gameOverActive{
-    margin: 5px;
-    background-color: #ee0000;
-    color: rgb(0, 0, 0);
-    font-weight: 700;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #979caf;
+.gameOverActive {
+  margin: 5px;
+  background-color: #ee0000;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #979caf;
 }
