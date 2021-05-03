@@ -11,6 +11,9 @@ let btnStart = document.querySelector('.startSimon');
 let scoreSign: any = document.querySelector('.currentScore');
 let gameOverSign: any = document.querySelector('.gameOver');
 let bestScoreSign: any = document.querySelector('.bestScore');
+let innerCircle: any = document.querySelector('.innerCircle');
+let headline: any = document.querySelector('.headline');
+const change: any = document.getElementById('change');
 
 // Arrays & Variablen
 
@@ -130,7 +133,7 @@ function startSimon() {
     start = true;
     nextSequence();
     showColorEffect();
-    gameOverSign.innerHTML = '';
+    gameOverSign.innerHTML = 'Have fun!';
   }
 }
 
@@ -186,3 +189,15 @@ window.onload = function () {
       localStorage.getItem('highscore')) as string;
   }
 };
+
+//darkmode
+
+change.addEventListener('change', () => {
+  document.body.classList.toggle('bright');
+  innerCircle.classList.toggle('brightCircle');
+  scoreSign.classList.toggle('brightScore');
+  gameOverSign.classList.toggle('brightScore');
+  bestScoreSign.classList.toggle('brightScore');
+  btnStart?.classList.toggle('startSimonBright');
+  headline.classList.toggle('brightHeadline');
+});

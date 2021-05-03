@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+    />
   </head>
 
   <body>
     <div class="headline">TOBI SAYS: PLAY MY GAME!</div>
     <div class="scoreBar">
       <div class="score currentScore" id="currentScore">Dein Score:</div>
-      <div class="gameOver">Have fun!</div>
+      <div class="score gameOver">Have fun!</div>
       <div class="score bestScore">Bester Score:</div>
     </div>
     <div class="simon">
@@ -25,7 +29,16 @@
         <div class="btn quarterCircleBlue"></div>
       </div>
 
-      <div class="innerCircle"></div>
+      <div class="innerCircle" id="innerCircle">
+        <div>
+          <input type="checkbox" class="checkbox" id="change" />
+          <label class="label" for="change">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+            <div class="ball"></div>
+          </label>
+        </div>
+      </div>
     </div>
     <div class="startSimon">
       <button id="start">Start game!</button>
