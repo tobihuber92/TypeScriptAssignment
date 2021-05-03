@@ -13,7 +13,7 @@ let gameOverSign: any = document.querySelector('.gameOver');
 let bestScoreSign: any = document.querySelector('.bestScore');
 let innerCircle: any = document.querySelector('.innerCircle');
 let headline: any = document.querySelector('.headline');
-const change: any = document.getElementById('change');
+let change: any = document.getElementById('change');
 
 // Arrays & Variablen
 
@@ -179,6 +179,8 @@ function checkIfNewBestscore() {
   }
 }
 
+// Funktion damit der beste Score auch nach dem neu laden noch sichtbar ist
+
 window.onload = function () {
   if (localStorage.getItem('highscore')) {
     bestScoreSign.innerText = ('Bester Score:' +
@@ -190,7 +192,7 @@ window.onload = function () {
   }
 };
 
-//darkmode
+//brightmode
 
 change.addEventListener('change', () => {
   document.body.classList.toggle('bright');
