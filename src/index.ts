@@ -1,19 +1,22 @@
 //THIS IS THE ENTRY FILE - WRITE YOUR MAIN LOGIC HERE!
 import { ModuleKind } from '../node_modules/typescript/lib/typescript';
+import { activateButton } from './activateButtons';
+import { playAudio } from './playAudio';
+import {
+  btnGreen,
+  btnRed,
+  btnYellow,
+  btnBlue,
+  btnStart,
+  gameOverSign,
+  scoreSign,
+  bestScoreSign,
+  change,
+  innerCircle,
+  headline,
+} from './querySelectors';
 
 // Klassen zuweisen
-
-let btnGreen = document.querySelector('.quarterCircleGreen');
-let btnRed = document.querySelector('.quarterCircleRed');
-let btnYellow = document.querySelector('.quarterCircleYellow');
-let btnBlue = document.querySelector('.quarterCircleBlue');
-let btnStart = document.querySelector('.startSimon');
-let scoreSign: any = document.querySelector('.currentScore');
-let gameOverSign: any = document.querySelector('.gameOver');
-let bestScoreSign: any = document.querySelector('.bestScore');
-let innerCircle: any = document.querySelector('.innerCircle');
-let headline: any = document.querySelector('.headline');
-let change: any = document.getElementById('change');
 
 // Arrays & Variablen
 
@@ -41,7 +44,7 @@ btnStart?.addEventListener('click', function () {
   startSimon();
 });
 
-// Funktion die eine zufällige Farbe ermittelt
+// Funktion die eine zufällige Farbe ermittelt und in der Konsole ausgibt
 
 function nextSequence(): void {
   var randomNumber = Math.floor(Math.random() * 4);
@@ -50,41 +53,7 @@ function nextSequence(): void {
   console.log(sequence);
 }
 
-//Fügt CSS Klasse "active" hinzu
-//--> wenn ein Button aktiviert wird, wird er hervorgehoben
-
-function activateButton(farbe: string) {
-  if (farbe === 'green') {
-    btnGreen?.classList.add('active');
-  } else if (farbe === 'red') {
-    btnRed?.classList.add('active');
-  } else if (farbe === 'yellow') {
-    btnYellow?.classList.add('active');
-  } else if (farbe === 'blue') {
-    btnBlue?.classList.add('active');
-  }
-
-  setTimeout(deactivateButton, 300);
-}
-
-// Die Hervorhebung wird deaktiviert
-
-function deactivateButton() {
-  btnGreen?.classList.remove('active');
-  btnRed?.classList.remove('active');
-  btnYellow?.classList.remove('active');
-  btnBlue?.classList.remove('active');
-}
-
-// Funktion um die Sounds abzuspielen
-
-function playAudio(farbe: string) {
-  const audio = new Audio('../src/sounds/' + farbe + '.mp3');
-  audio.play();
-  console.log('clicked');
-}
-
-// Wenn man Start drückt kommt ein zufälliger Sound und ein Button wird auf active gesetzt
+// Jede Runde wird ein neuer Color/Sound-Effekt draufgezählt, Abstand zwischen Effekten wird reguliert --> Computer
 
 function showColorEffect() {
   let start = 0;
@@ -137,7 +106,7 @@ function startSimon() {
   }
 }
 
-// Spielt Sound & Animationen ab, Zählt die Scores hoch und gibt diese aus
+// Spielt Sound & Animationen ab, Zählt die Scores hoch und gibt diese aus wenn der User klickt --> User
 function callButton(farbe: string): void {
   if (start) {
     var userClickedButtonColor = farbe;
@@ -187,12 +156,11 @@ window.onload = function () {
       localStorage.getItem('highscore')) as string;
   } else {
     localStorage.setItem('highscore', '');
-    bestScoreSign.innerText = ('Bester Score:' +
-      localStorage.getItem('highscore')) as string;
+    bestScoreSign.innerText = 'Bester Score:' as string;
   }
 };
 
-//brightmode
+// brightmode
 
 change.addEventListener('change', () => {
   document.body.classList.toggle('bright');
