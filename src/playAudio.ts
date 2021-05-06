@@ -1,4 +1,4 @@
-// Funktion um die Sounds abzuspielen
+//---------- Funktion um die Sounds der Farben abzuspielen ----------//
 
 export function playAudio(farbe: string) {
   const audio = new Audio('../src/sounds/' + farbe + '.mp3');

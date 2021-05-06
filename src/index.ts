@@ -1,4 +1,9 @@
 //THIS IS THE ENTRY FILE - WRITE YOUR MAIN LOGIC HERE!
+
+// WIE IN DER DOKUMENATION BESCHRIEBEN, HABE ICH MICH FÜR DIE GRUNDLEGENDE LOGIK STARK AN EINEM SIMON-GAME-TUTORIAL ORIENTIERT //
+// YOUTUBE VIDEO: https://www.youtube.com/watch?v=ahGDFFAgKII&t=3s //
+// IN DER DOKUMENATION HABE ICH DEUTLICH BESCHRIEBEN, WELCHE FUNKTIONEN VON MIR STAMMEN UND AN WELCHEN ICH MICH DURCH DAS YT-VIDEO ORIENTIERT HABE. //
+
 import { ModuleKind } from '../node_modules/typescript/lib/typescript';
 import { activateButton } from './activateButtons';
 import { playAudio } from './playAudio';
@@ -42,7 +47,7 @@ btnStart?.addEventListener('click', function () {
   startSimon();
 });
 
-//---------- Funktion die eine zufällige Farbe ermittelt und in der Konsole ausgibt ----------/
+//---------- Funktion, die eine zufällige Farbe ermittelt und in der Konsole ausgibt ----------//
 
 function nextSequence(): void {
   var randomNumber = Math.floor(Math.random() * 4);
@@ -51,7 +56,7 @@ function nextSequence(): void {
   //console.log(sequence);
 }
 
-//---------- Jede Runde wird ein neuer Color/Sound-Effekt draufgezählt, Abstand zwischen Effekten wird reguliert --> Computer ----------/
+//---------- Jede Runde wird ein neuer Color/Sound-Effekt draufgezählt, Abstand zwischen Effekten wird reguliert --> Computer ----------//
 
 function showColorEffect() {
   let start = 0;

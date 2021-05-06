@@ -1,7 +1,7 @@
 import { btnGreen, btnRed, btnYellow, btnBlue } from './querySelectors';
 
-//Fügt CSS Klasse "active" hinzu
-//--> wenn ein Button aktiviert wird, wird er hervorgehoben
+//---------- Fügt CSS Klasse "active" hinzu ----------//
+//---------- --> wenn ein Button aktiviert wird, wird er hervorgehoben -----------//
 
 export function activateButton(farbe: string) {
   if (farbe === 'green') {
@@ -17,7 +17,7 @@ export function activateButton(farbe: string) {
   setTimeout(deactivateButton, 300);
 }
 
-// Die Hervorhebung wird deaktiviert
+//---------- Die Hervorhebung wird deaktiviert ----------//
 
 export function deactivateButton() {
   btnGreen?.classList.remove('active');

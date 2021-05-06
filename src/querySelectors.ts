@@ -1,3 +1,5 @@
+//---------- divs & Buttons werden über document.querySelector() angesprochen ----------//
+
 export let btnGreen = document.querySelector('.quarterCircleGreen');
 export let btnRed = document.querySelector('.quarterCircleRed');
 export let btnYellow = document.querySelector('.quarterCircleYellow');
