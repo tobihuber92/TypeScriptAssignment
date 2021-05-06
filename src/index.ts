@@ -48,7 +48,7 @@ function nextSequence(): void {
   var randomNumber = Math.floor(Math.random() * 4);
   var randomButton = allButtons[randomNumber];
   sequence.push(randomButton);
-  console.log(sequence);
+  //console.log(sequence);
 }
 
 //---------- Jede Runde wird ein neuer Color/Sound-Effekt draufgezählt, Abstand zwischen Effekten wird reguliert --> Computer ----------/
@@ -91,7 +91,7 @@ function gameOver() {
   userClickedPattern = [];
   sequence = [];
   start = false;
-  console.log('loser');
+  //console.log('loser');
 }
 
 //---------- checkt ob userClickedPattern = sequence ist --> d.h. die Länge der Buchstaben der Farben wird verglichen ----------//
@@ -133,8 +133,8 @@ function callButton(farbe: string): void {
 function checkIfNewBestscore() {
   var newBestScore = score;
   var bestScore = parseInt(localStorage.getItem('highscore') as string);
-  console.log(newBestScore);
-  console.log(bestScore);
+  //console.log(newBestScore);
+  //console.log(bestScore);
   if ((localStorage.getItem('highscore') as string) != '') {
     if (newBestScore > bestScore) {
       localStorage.setItem('highscore', newBestScore.toString());
