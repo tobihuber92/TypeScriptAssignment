@@ -16,9 +16,7 @@ import {
   headline,
 } from './querySelectors';
 
-// Klassen zuweisen
-
-// Arrays & Variablen
+//---------- Arrays & Variablen ---------//
 
 let allButtons = ['green', 'red', 'yellow', 'blue'];
 let sequence: any[] = [];
@@ -26,7 +24,7 @@ var userClickedPattern: string[] = [];
 var start = false;
 var score = 0;
 
-// Click-Funktion
+//---------- Click-Funktion mit addEventListener ----------//
 
 btnGreen?.addEventListener('click', function () {
   callButton('green');
@@ -44,7 +42,7 @@ btnStart?.addEventListener('click', function () {
   startSimon();
 });
 
-// Funktion die eine zufällige Farbe ermittelt und in der Konsole ausgibt
+//---------- Funktion die eine zufällige Farbe ermittelt und in der Konsole ausgibt ----------/
 
 function nextSequence(): void {
   var randomNumber = Math.floor(Math.random() * 4);
@@ -53,7 +51,7 @@ function nextSequence(): void {
   console.log(sequence);
 }
 
-// Jede Runde wird ein neuer Color/Sound-Effekt draufgezählt, Abstand zwischen Effekten wird reguliert --> Computer
+//---------- Jede Runde wird ein neuer Color/Sound-Effekt draufgezählt, Abstand zwischen Effekten wird reguliert --> Computer ----------/
 
 function showColorEffect() {
   let start = 0;
@@ -71,17 +69,18 @@ function showColorEffect() {
   }
 }
 
-// checkt ob userClickedPattern = sequence ist
+//---------- Startet die Anwendung ----------//
 
-function check() {
-  for (var i = 0; i < userClickedPattern.length; i++) {
-    if (userClickedPattern[i] != sequence[i]) return false;
+function startSimon() {
+  if (start === false) {
+    start = true;
+    nextSequence();
+    showColorEffect();
+    gameOverSign.innerHTML = 'Have fun!';
   }
-
-  return true;
 }
 
-// GameOver Funktion
+//---------- GameOver-Funktion ----------//
 
 function gameOver() {
   const audio = new Audio('../src/sounds/gameOver.mp3');
@@ -95,18 +94,19 @@ function gameOver() {
   console.log('loser');
 }
 
-// Startet die Anwendung
+//---------- checkt ob userClickedPattern = sequence ist --> d.h. die Länge der Buchstaben der Farben wird verglichen ----------//
+//---------- --> userClickedPattern =! sequence --> check ist false und gameOver wird ausgeführt ----------//
 
-function startSimon() {
-  if (start === false) {
-    start = true;
-    nextSequence();
-    showColorEffect();
-    gameOverSign.innerHTML = 'Have fun!';
+function check() {
+  for (var i = 0; i < userClickedPattern.length; i++) {
+    if (userClickedPattern[i] != sequence[i]) return false;
   }
+
+  return true;
 }
 
-// Spielt Sound & Animationen ab, Zählt die Scores hoch und gibt diese aus wenn der User klickt --> User
+//---------- Spielt Sound & Animationen ab, Zählt die Scores hoch und gibt diese aus wenn der User klickt --> User ----------//
+
 function callButton(farbe: string): void {
   if (start) {
     var userClickedButtonColor = farbe;
@@ -128,7 +128,7 @@ function callButton(farbe: string): void {
   }
 }
 
-// Best Score Funktion mit local storage
+//---------- Best Score Funktion mit local-storage-Anbindung  ----------//
 
 function checkIfNewBestscore() {
   var newBestScore = score;
@@ -148,7 +148,8 @@ function checkIfNewBestscore() {
   }
 }
 
-// Funktion damit der beste Score auch nach dem neu laden noch sichtbar ist
+//----------- Funktion damit der beste Score auch für neue Spieler sichtbar bleibt. -----------//
+//----------- Wenn ein Highscore vorhanden ist, gibt er diesen aus, wenn nicht gibt er einfach nur Text aus-----------//
 
 window.onload = function () {
   if (localStorage.getItem('highscore')) {
@@ -160,7 +161,7 @@ window.onload = function () {
   }
 };
 
-// brightmode
+//---------- brightmode ----------//
 
 change.addEventListener('change', () => {
   document.body.classList.toggle('bright');
